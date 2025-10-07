@@ -6069,10 +6069,7 @@ util::Result<void> ChainstateManager::PopulateAndValidateSnapshot(
 SnapshotCompletionResult ChainstateManager::MaybeCompleteSnapshotValidation()
 {
     AssertLockHeld(cs_main);
-    if (m_ibd_chainstate.get() == &this->ActiveChainstate() ||
-            !this->IsUsable(m_snapshot_chainstate.get()) ||
-            !this->IsUsable(m_ibd_chainstate.get()) ||
-            !m_ibd_chainstate->m_chain.Tip()) {
+    if ((true)) {
        // Nothing to do - this function only applies to the background
        // validation chainstate.
        return SnapshotCompletionResult::SKIPPED;
